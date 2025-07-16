@@ -1,82 +1,56 @@
 # MARK 1 - Skin Cancer Classification Project
 
 ## 🏥 Overview
-
 A **skin cancer classifier** using a trained **ResNet18** model on **224x224 images**, integrated with a **locally deployed LLM (LocalAI)** for offline, privacy-focused analysis and interaction.
 
----
-
 ## ✨ Features
-
-* **Image Classification:** Upload an image via the GUI to classify for skin cancer.
-* **LLM Integration:** Share results with a local LLM for interactive explanations.
-* **Local Deployment:** Runs entirely offline for privacy and speed.
-
----
+- **Image Classification:** Upload an image via the GUI to classify for skin cancer.
+- **LLM Integration:** Share results with a local LLM for interactive explanations.
+- **Local Deployment:** Runs entirely offline for privacy and speed.
 
 ## 🚀 How to Use
-
 1. Run the GUI:
-
    ```bash
    python GUI.py
    ```
+
 2. Upload an image for classification.
 3. View the classification result and interact with the LLM for additional insights.
 
----
-
 ## ⚙️ Technical Details
-
-* **Model:** ResNet18 fine-tuned for skin cancer classification.
-* **Input Requirements:** Images of size `224x224`.
-* **LLM:** LocalAI deployed locally for offline LLM capabilities.
-
----
+- **Model:** ResNet18 fine-tuned for skin cancer classification.
+- **Input Requirements:** Images of size `224x224`.
+- **LLM:** LocalAI deployed locally for offline LLM capabilities.
 
 ## 🛠️ Installation
-
 1. **Clone the repository:**
-
    ```bash
    git clone https://github.com/YourUsername/YourRepoName.git
    cd YourRepoName
    ```
-2. **Install dependencies:**
 
+2. **Install dependencies:**
    ```bash
    pip install -r requirements.txt
    ```
-3. **Run the GUI:**
 
+3. **Run the GUI:**
    ```bash
    python GUI.py
    ```
 
----
-
 ## 📁 File Structure
-
-* `GUI.py` – Main GUI for user interaction.
-* `classifier.py` – Classification logic for ResNet18.
-* `classification model/` – Trained ResNet18 model weights.
-* `requirements.txt` – Project dependencies.
-
----
+- `GUI.py` – Main GUI for user interaction.
+- `classifier.py` – Classification logic for ResNet18.
+- `classification model/` – Trained ResNet18 model weights.
+- `requirements.txt` – Project dependencies.
 
 ## 📜 License
-
 This project is licensed under the **MIT License**.
 
----
-
 ## 🙏 Acknowledgments
-
-* PyTorch's ResNet18 for backbone classification.
-* [LocalAI](https://localai.io/) for local LLM deployment.
-
----
+- PyTorch's ResNet18 for backbone classification.
+- LocalAI for local LLM deployment.
 
 ## ⚠️ Disclaimer
-
 This tool is intended **for educational and research purposes only** and should **not** be used as a substitute for professional medical advice or diagnosis.
