@@ -1,23 +1,26 @@
 # MARK 1 - Skin Cancer Classification Project
 
-## 🩺 Overview
+## 🏥 Overview
+
 A **skin cancer classifier** using a trained **ResNet18** model on **224x224 images**, integrated with a **locally deployed LLM (LocalAI)** for offline, privacy-focused analysis and interaction.
 
 ---
 
 ## ✨ Features
-- **Image Classification:** Upload an image via the GUI to classify for skin cancer.
-- **LLM Integration:** Share results with a local LLM for interactive explanations.
-- **Local Deployment:** Runs entirely offline for privacy and speed.
+
+* **Image Classification:** Upload an image via the GUI to classify for skin cancer.
+* **LLM Integration:** Share results with a local LLM for interactive explanations.
+* **Local Deployment:** Runs entirely offline for privacy and speed.
 
 ---
 
 ## 🚀 How to Use
+
 1. Run the GUI:
+
    ```bash
    python GUI.py
-````
-
+   ```
 2. Upload an image for classification.
 3. View the classification result and interact with the LLM for additional insights.
 
@@ -77,18 +80,3 @@ This project is licensed under the **MIT License**.
 ## ⚠️ Disclaimer
 
 This tool is intended **for educational and research purposes only** and should **not** be used as a substitute for professional medical advice or diagnosis.
-
-```
-
----
-
-✅ **You can paste this directly into your `README.md`** in your GitHub repository.  
-✅ It will render cleanly with correct headings, code blocks, and emojis for readability.
-
-If you would like me to prepare:
-✅ A **badge section** (license, Python version, GitHub Actions CI)  
-✅ A **clean LICENSE file**  
-✅ A **`.gitignore` tailored for this repo**
-
-to finalize your repository, let me know anytime.
-```
