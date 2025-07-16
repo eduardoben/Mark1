@@ -78,9 +78,9 @@ This tool is intended **for educational and research purposes only** and should 
 Below are some screenshots of the GUI to help you understand its interface and functionality:
 
 1. **Main Interface:**
-   ![Main Interface](images\main-interface.png)
+   ![Main Interface](images/main-interface.png)
    The main interface allows users to upload images and view classification results.
 
 2. **Classification Results:**
-   ![Classification Results](images\classification-result.png)
+   ![Classification Results](images/classification-result.png)
    Displays the predicted class and receive explanations from the LocalAI LLM.
