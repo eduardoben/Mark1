@@ -1,59 +1,94 @@
 # MARK 1 - Skin Cancer Classification Project
 
-## Overview
-This project is a skin cancer classifier that uses a trained ResNet18 model to classify images of size 224x224. The classification results are shared with a locally deployed Large Language Model (LLM) using LocalAI. The system is designed for local use.
+## 🩺 Overview
+A **skin cancer classifier** using a trained **ResNet18** model on **224x224 images**, integrated with a **locally deployed LLM (LocalAI)** for offline, privacy-focused analysis and interaction.
 
 ---
 
-## Features
-- **Image Classification**: Upload an image via the GUI to classify it as skin cancer or not.
-- **LLM Integration**: The classification result is shared with a locally deployed LLM for further interaction.
-- **Local Deployment**: Both the classifier and LLM are deployed locally for privacy and efficiency.
+## ✨ Features
+- **Image Classification:** Upload an image via the GUI to classify for skin cancer.
+- **LLM Integration:** Share results with a local LLM for interactive explanations.
+- **Local Deployment:** Runs entirely offline for privacy and speed.
 
 ---
 
-## How to Use
-1. Run `GUI.py` to start the graphical user interface.
+## 🚀 How to Use
+1. Run the GUI:
+   ```bash
+   python GUI.py
+````
+
 2. Upload an image for classification.
 3. View the classification result and interact with the LLM for additional insights.
 
 ---
 
-## Technical Details
-- **Model**: ResNet18 trained for skin cancer classification.
-- **Image Requirements**: Images must be 224x224 pixels.
-- **LLM**: LocalAI is used to deploy the LLM locally.
+## ⚙️ Technical Details
+
+* **Model:** ResNet18 fine-tuned for skin cancer classification.
+* **Input Requirements:** Images of size `224x224`.
+* **LLM:** LocalAI deployed locally for offline LLM capabilities.
 
 ---
 
-## Installation
-1. Clone the repository.
-2. Install the required dependencies using:
+## 🛠️ Installation
+
+1. **Clone the repository:**
+
+   ```bash
+   git clone https://github.com/YourUsername/YourRepoName.git
+   cd YourRepoName
+   ```
+2. **Install dependencies:**
+
    ```bash
    pip install -r requirements.txt
    ```
-3. Run `GUI.py` to start the application.
+3. **Run the GUI:**
+
+   ```bash
+   python GUI.py
+   ```
 
 ---
 
-## File Structure
-- `GUI.py`: Main file for user interaction.
-- `classifier.py`: Contains the classification logic.
-- `classification model/`: Directory containing the trained ResNet18 model files.
-- `requirements.txt`: Lists the dependencies for the project.
+## 📁 File Structure
+
+* `GUI.py` – Main GUI for user interaction.
+* `classifier.py` – Classification logic for ResNet18.
+* `classification model/` – Trained ResNet18 model weights.
+* `requirements.txt` – Project dependencies.
 
 ---
 
-## License
-This project is licensed under the MIT License.
+## 📜 License
+
+This project is licensed under the **MIT License**.
 
 ---
 
-## Acknowledgments
-- ResNet18 model for image classification.
-- LocalAI for LLM deployment.
+## 🙏 Acknowledgments
+
+* PyTorch's ResNet18 for backbone classification.
+* [LocalAI](https://localai.io/) for local LLM deployment.
 
 ---
 
-## Disclaimer
-This tool is intended for educational purposes and should not be used as a substitute for professional medical advice.
+## ⚠️ Disclaimer
+
+This tool is intended **for educational and research purposes only** and should **not** be used as a substitute for professional medical advice or diagnosis.
+
+```
+
+---
+
+✅ **You can paste this directly into your `README.md`** in your GitHub repository.  
+✅ It will render cleanly with correct headings, code blocks, and emojis for readability.
+
+If you would like me to prepare:
+✅ A **badge section** (license, Python version, GitHub Actions CI)  
+✅ A **clean LICENSE file**  
+✅ A **`.gitignore` tailored for this repo**
+
+to finalize your repository, let me know anytime.
+```
