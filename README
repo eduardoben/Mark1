@@ -1,0 +1,40 @@
+# MARK 1 - Skin Cancer Classification Project
+
+## Overview
+This project is a skin cancer classifier that uses a trained ResNet18 model to classify images of size 224x224. The classification results are shared with a locally deployed Large Language Model (LLM) using LocalAI. The system is designed for local use.
+
+## Features
+- **Image Classification**: Upload an image via the GUI to classify it as skin cancer or not.
+- **LLM Integration**: The classification result is shared with a locally deployed LLM for further interaction.
+- **Local Deployment**: Both the classifier and LLM are deployed locally for privacy and efficiency.
+
+## How to Use
+1. Run `GUI.py` to start the graphical user interface.
+2. Upload an image for classification.
+3. View the classification result and interact with the LLM for additional insights.
+
+## Technical Details
+- **Model**: ResNet18 trained for skin cancer classification.
+- **Image Requirements**: Images must be 224x224 pixels.
+- **LLM**: LocalAI is used to deploy the LLM locally.
+
+## Installation
+1. Clone the repository.
+2. Install the required dependencies using `pip install -r requirements.txt`.
+3. Run `GUI.py` to start the application.
+
+## File Structure
+- `GUI.py`: Main file for user interaction.
+- `classifier.py`: Contains the classification logic.
+- `classification model/`: Directory containing the trained ResNet18 model files.
+- `requirements.txt`: Lists the dependencies for the project.
+
+## License
+This project is licensed under the MIT License.
+
+## Acknowledgments
+- ResNet18 model for image classification.
+- LocalAI for LLM deployment.
+
+## Disclaimer
+This tool is intended for educational purposes and should not be used as a substitute for professional medical advice.
