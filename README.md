@@ -14,19 +14,19 @@ A **skin cancer classifier** using a trained **ResNet18** model on **224x224 ima
    python GUI.py
    ```
 
-2. Upload an image for classification.
+2. Upload an image for classification (recommended: test set images from the **224x224 MedMinst Derma Dataset**, 2D images).
 3. View the classification result and interact with the LLM for additional insights.
 
 ## ⚙️ Technical Details
-- **Model:** ResNet18 fine-tuned for skin cancer classification.
-- **Input Requirements:** Images of size `224x224`.
+- **Model:** ResNet18 fine-tuned for skin cancer classification using the **MedMinst Derma Dataset** (224x224, 2D images). Dataset details available at [MedMinst](https://medmnist.com/).
+- **Input Requirements:** 2D images of size `224x224`.
 - **LLM:** LocalAI deployed locally for offline LLM capabilities.
 
 ## 🛠️ Installation
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/YourUsername/YourRepoName.git
-   cd YourRepoName
+   git clone https://github.com/eduardoben/Mark1.git
+   cd Mark1
    ```
 
 2. **Install dependencies:**
@@ -54,3 +54,21 @@ This project is licensed under the **MIT License**.
 
 ## ⚠️ Disclaimer
 This tool is intended **for educational and research purposes only** and should **not** be used as a substitute for professional medical advice or diagnosis.
+
+## 🧭 Workflow of `GUI.py`
+
+### How-to-Use Guide
+1. **Launch the GUI:**
+   Run the `GUI.py` script to open the graphical user interface.
+   ```bash
+   python GUI.py
+   ```
+
+2. **Upload an Image:**
+   Use the provided interface to upload a 2D image (recommended: test set images from the **224x224 MedMinst Derma Dataset**). The image is preprocessed to ensure it meets the required dimensions (224x224) and format before being passed to the ResNet18 model for classification.
+
+3. **View Classification Results:**
+   Once the image is processed, the classification result is displayed on the GUI. The result includes the predicted class and confidence score, providing insights into the model's decision.
+
+4. **Interact with the LLM:**
+   The GUI connects to the locally deployed LocalAI LLM to enable interactive explanations. The classification result is sent to the LLM, which processes the input and provides detailed insights or answers to user queries. This interaction is entirely offline, ensuring privacy and security.
