@@ -1,0 +1,21 @@
+En la PC desktop
+- Crear Docker container de RAGFlow - > https://chatgpt.com/c/68523e91-55f4-800e-913a-2c4f9450d883  / https://chatgpt.com/g/g-vK4oPfjfp-coding-assistant/c/68522aef-cc20-800e-9565-07f18f46d5f9
+
+- Para registrar la URL de localai
+    - http://host.docker.internal:1230
+    
+General 
+- Integrar RAG a lo que se tiene
+- Buscar literatura medica veraz del cancer 
+    - Por lo menos una referencia por tipo de cancer
+- Mejorar el % del clasificador - WIP
+- Mejorar el desempeño del LLM 
+- Crear todo en un paquete de facil instalación
+- Crear un README con instrucciones de instalación y uso
+- Crear un video de demostración del sistema
+- Crear un repositorio en GitHub para el proyecto
+- Documentar el código y el proceso de desarrollo
+
+
+Documentar
+

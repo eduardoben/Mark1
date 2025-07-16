@@ -1,0 +1,17 @@
+*.log
+__pycache__/
+*.pyc
+.DS_Store
+.venv
+.venv313
+.training
+test_images
+training classification
+classification_model.py
+Documentación de progreso.docx
+req_test.py
+training_model.ipynb
+TODO.txt
+*.ipynb_checkpoints
+*.csv
+*.xlsx
