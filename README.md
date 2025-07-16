@@ -72,3 +72,15 @@ This tool is intended **for educational and research purposes only** and should 
 
 4. **Interact with the LLM:**
    The GUI connects to the locally deployed LocalAI LLM to enable interactive explanations. The classification result is sent to the LLM, which processes the input and provides detailed insights or answers to user queries. This interaction is entirely offline, ensuring privacy and security.
+
+## 🖼️ GUI Screenshots
+
+Below are some screenshots of the GUI to help you understand its interface and functionality:
+
+1. **Main Interface:**
+   ![Main Interface](images\main-interface.png)
+   The main interface allows users to upload images and view classification results.
+
+2. **Classification Results:**
+   ![Classification Results](images\classification-result.png)
+   Displays the predicted class and receive explanations from the LocalAI LLM.
