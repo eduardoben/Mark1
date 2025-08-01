@@ -224,7 +224,7 @@ class ChatApp(QWidget):
         self.classification = None
         self.image_path = None
 
-        
+
         # Force garbage collection
         if hasattr(self, 'image'):
             self.image.close()
@@ -239,7 +239,7 @@ class ChatApp(QWidget):
             'Clear Chat', 
             'Are you sure you want to clear the chat history?',
             QMessageBox.Yes | QMessageBox.No,
-            QMessageBox.No
+            QMessageBox.No            
         )
         
         if reply == QMessageBox.Yes:
