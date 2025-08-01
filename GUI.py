@@ -25,7 +25,7 @@ def query_llm(classification, user_message):
     """
 
     payload = {
-        "model": "gpt-4o",  # Or the model you have loaded in LocalAI
+        "model": "gpt-4o",  # Or the model loaded in LocalAI
         "messages": [
             {"role": "system", "content": "You are a dermatology expert who explains medical information clearly and briefly for patients."},
             {"role": "user", "content": prompt}
@@ -67,6 +67,7 @@ class ChatApp(QWidget):
         # Image
         self.image_label = QLabel("Loaded image:")
         self.image_label.setAlignment(Qt.AlignCenter)
+        self.image_label.setWordWrap(True)
         self.image_label.setStyleSheet("border: 1px solid black;")
         self.image_label.setFixedSize(300, 300)
         self.image_label.setFont(font_size)  
@@ -135,6 +136,7 @@ class ChatApp(QWidget):
         self.current_pixmap = None
 
     def load_image(self):
+        '''Load an image from file and classify it using the classifier module.'''
         path, _ = QFileDialog.getOpenFileName(self, "Select an image", "", "Images (*.png *.jpg *.jpeg *.bmp)")
         if path:
             # Clean up previous image data
@@ -146,6 +148,8 @@ class ChatApp(QWidget):
             # Check if the image is valid
             if pixmap.isNull():
                 QMessageBox.critical(self, "Image Error", "The selected image is invalid or corrupted.")
+                self.write_chat("[Error]: The selected image is invalid or corrupted.")
+                self.cleanup_previous_image()
                 return
             
             # Store current pixmap reference for cleanup
@@ -159,20 +163,30 @@ class ChatApp(QWidget):
                 # Classify image
                 self.classification = image_classification(path)
                 if not self.classification:
-                    raise ValueError("Classification returned an empty result.")
+                    QMessageBox.critical(self, "Classification Error", "The classification returned an empty result.")
+                    self.write_chat("[Error]: The classification returned an empty result.")
+                    raise ValueError("Classification returned an empty result.")              
+                                
                 
                 # Write classification result to chat
                 self.write_chat(f"[Classifier] Image classified as: {self.classification}")
+
 
                 # Send automatic question to LLM
                 automatic_question = f"Provide me with clear, brief but detailed medical information about the following skin lesion: {self.classification}."
                 response = query_llm(self.classification, automatic_question)
                 if not response:
-                    response = "Could not get a response from the model."
+                    response = "Could not get a response from the LLM model."
+
                 self.write_chat(f"[Assistant]: {response}")
                 
             except Exception as e:
                 QMessageBox.critical(self, "Classification Error", f"Could not classify image:\n{e}")
+                self.write_chat(f"[Error]: Could not classify image: {e}")
+                self.cleanup_previous_image()
+                return
+            
+            
             finally:
                 # Force garbage collection after classification
                 gc.collect()
@@ -182,6 +196,8 @@ class ChatApp(QWidget):
         text = self.user_input.text().strip()
         # Check if the input is empty
         if not text:
+            QMessageBox.warning(self, "Empty Input", "You must enter a message to send.")
+            self.write_chat("[Error]: You must enter a message to send.")
             return
 
         if not self.classification:
@@ -195,9 +211,10 @@ class ChatApp(QWidget):
         try:
             response = query_llm(self.classification, text)
             if not response:
-                response = "Could not get a response from the model."
+                response = "Could not get a response from the LLM model."
 
-            self.write_chat(f"[Assistant]: {response}")
+            # Write the response to the chat box
+            self.write_chat(f"[Assistant]: {response}")         
 
         except Exception as e:
             self.write_chat(f"[Error querying LLM]: {e}")
@@ -248,12 +265,9 @@ class ChatApp(QWidget):
             
             # Clear any text in the input field
             self.user_input.clear()
+            self.cleanup_previous_image()
             
-            # Optionally reset the classification state
-            # (Comment out these lines if you want to keep the image and classification)
-            # self.classification = None
-            # self.image_path = None
-            
+          
             # Show confirmation message
             self.write_chat("[System]: Chat history cleared.")
             
@@ -282,6 +296,8 @@ class ChatApp(QWidget):
             
         except Exception as e:
             print(f"Error during cleanup: {e}")
+            QMessageBox.critical(self, "Cleanup Error", f"An error occurred during cleanup:\n{e}")
+            # Accept the close event even if cleanup fails
             event.accept()  # Still close the application
 
     def __del__(self):
@@ -296,6 +312,7 @@ class ChatApp(QWidget):
 
         
 if __name__ == "__main__":
+    """Main entry point for the application."""
     app = QApplication(sys.argv)
     window = ChatApp()
     window.setStyleSheet("background-color: #f0f0f0;")
